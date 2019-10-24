@@ -1,0 +1,3 @@
+class StoolsController < ApplicationController
+
+end
