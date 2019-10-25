@@ -1,10 +1,10 @@
-FROM ruby:2.6.4
+FROM ruby:2.6.5
 
 RUN curl -SL https://deb.nodesource.com/setup_11.x | bash
 
 # 最新のyarnを取得
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | 	tee /etc/apt/sources.list.d/yarn.list
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 # nodeのバージョンが6以上であればなんでも良いと思う
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
 
