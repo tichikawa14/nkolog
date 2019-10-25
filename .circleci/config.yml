@@ -1,7 +1,8 @@
 version: 2
 jobs:
   generate_cache:
-    machine: circleci/classic:edge
+    machine:
+      image: circleci/classic:edgecircleci/classic:edge
     steps:
       - checkout
       - restore_cache:
@@ -20,7 +21,8 @@ jobs:
           paths: ~/caches/images.tar
 
   build:
-    machine: circleci/classic:edge
+    machine:
+      image: circleci/classic:edge
     steps:
       - checkout
       - restore_cache:
