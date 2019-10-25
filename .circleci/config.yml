@@ -49,8 +49,9 @@ jobs:
 
 workflows:
   version: 2
+  build-test:
   jobs:
     - generate_cache
-    -  build-test:
+    - build:
         requires:
           - generate_cache
