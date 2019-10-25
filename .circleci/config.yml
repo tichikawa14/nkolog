@@ -20,7 +20,7 @@ jobs:
           key: docker-{{ checksum ".circleci/config.yml" }}-{{ checksum "docker-compose.yml" }}-{{ checksum "Dockerfile" }}
           paths: ~/caches/images.tar
 
-  test:
+  build:
     machine:
       image: circleci/classic:edge
     steps:
@@ -46,11 +46,3 @@ jobs:
       - run:
           name: docker-compose down
           command: docker-compose down
-
-  workflows:
-    version: 2
-    jobs:
-      - generate_cache
-      - test:
-          requires:
-            - generate_cache
