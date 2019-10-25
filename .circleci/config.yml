@@ -20,7 +20,7 @@ jobs:
           key: docker-{{ checksum ".circleci/config.yml" }}-{{ checksum "docker-compose.yml" }}-{{ checksum "Dockerfile" }}
           paths: ~/caches/images.tar
 
-  build:
+  test:
     machine:
       image: circleci/classic:edge
     steps:
@@ -52,6 +52,6 @@ jobs:
     build:
       jobs:
         - generate_cache
-        - build:
+        - test:
             requires:
               - generate_cache
