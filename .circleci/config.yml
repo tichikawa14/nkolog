@@ -27,9 +27,9 @@ jobs:
       - restore_cache:
           key: docker-{{ checksum ".circleci/config.yml" }}-{{ checksum "docker-compose.yml" }}-{{ checksum "Dockerfile" }}
           paths: ~/caches/images.tar
-            - run:
-                name: Load Docker images
-                command: docker load -i ~/caches/images.tar
+      - run:
+          name: Load Docker images
+          command: docker load -i ~/caches/images.tar
       - run:
           name: docker-compose up
           command: docker-compose up -d
