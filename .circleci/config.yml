@@ -51,6 +51,6 @@ workflows:
   version: 2
   jobs:
     - generate_cache
-    - build:
+    -  build-test:
         requires:
           - generate_cache
