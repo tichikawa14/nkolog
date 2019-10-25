@@ -2,7 +2,7 @@ version: 2
 jobs:
   generate_cache:
     machine:
-      image: circleci/classic:edgecircleci/classic:edge
+      image: circleci/classic:edge
     steps:
       - checkout
       - restore_cache:
